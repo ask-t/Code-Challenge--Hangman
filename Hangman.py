@@ -160,7 +160,7 @@ Try = True
 Try_a ='y'
 while True:
   correct = random.choice(list_Original)
-  print(correct)
+  
   l = len(correct)
   print(f'word count is {l}')
   if l == 3:
