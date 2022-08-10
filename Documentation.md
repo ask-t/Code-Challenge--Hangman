@@ -18,7 +18,7 @@ I worked on it on ver3.8.5
 
 Creating the Hangman game.
 
-Hangman game is a word guessing game. player can guess a letter in a trying until knowing the word or after 6 missings. 
+Hangman game is a word guessing game. player can guess a letter in a trying until knowing the word or after 6 missings. At this time I ignore this after 6times. Instead of it,  I put a system showing how many times the player try to do.
 
 ## How to work it
 
