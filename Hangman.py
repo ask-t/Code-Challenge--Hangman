@@ -13,7 +13,7 @@ def six_words():
     if secrets == word_l:
       break
     count +=1
-    answer = input(f'Round{count}: Please put word >> ')
+    answer = input(f'Round{count}: Please put a letter >> ')
     list_a.append(answer)
     if len(answer) <2:
       if answer == word_l[0]:
