@@ -59,7 +59,7 @@ Extra credit
 
 ### 1 prepare words for games.
 
-we need to prepare the words and put these on the list.
+we need to prepare some words and put these on the list.
 
 One thing we need to care about is that we need to choose the word which does not include duplicate letters. 
 
