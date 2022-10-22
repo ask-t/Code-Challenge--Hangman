@@ -1,6 +1,6 @@
 import random
 
-def six_words():
+def main():
   word = collect
   length = len(word)
   word_l = list(word)
@@ -38,12 +38,9 @@ Try = True
 Try_a ='y'
 while True:
   collect = random.choice(list_Original)
-  print(collect)
   l = len(collect)
   print(f'word count is {l}')
-  six_words()
+  main()
   Try_a = input('Do you want to play again? (y or n)>> ')
   if Try_a == 'n':
     break
-
-
