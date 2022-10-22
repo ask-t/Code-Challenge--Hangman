@@ -1,12 +1,10 @@
 import random
 
-def main():
-  word = collect
+def main(word):
   length = len(word)
+  print(f'word count is {length}')
   word_l = list(word)
-  secrets = []
-  for _ in range(length):
-    secrets.append('_')
+  secrets = [ '_' for _ in range(length)]
   list_a =[]
   list_b =[]
   count = 0
@@ -15,7 +13,7 @@ def main():
       break
     count +=1
     print(''.join(secrets))
-    answer = input(f'Round{count}: Please put word >> ')
+    answer = input(f'Round{count}: Please put a letter >> ')
     list_a.append(answer)
     if len(answer) <2:
       num =0
@@ -34,13 +32,9 @@ def main():
   print(text)
 
 list_Original = ['orange','lamb', 'grape','cake','flour','milk','cream','bread','pork','pie']
-Try = True
-Try_a ='y'
 while True:
   collect = random.choice(list_Original)
-  l = len(collect)
-  print(f'word count is {l}')
-  main()
-  Try_a = input('Do you want to play again? (y or n)>> ')
-  if Try_a == 'n':
+  main(collect)
+  try_a = input('Do you want to play again? (y or n)>> ')
+  if try_a == 'n':
     break
