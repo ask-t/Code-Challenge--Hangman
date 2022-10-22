@@ -44,8 +44,6 @@ while True:
   six_words()
   Try_a = input('Do you want to play again? (y or n)>> ')
   if Try_a == 'n':
-    Try_a = 1
-  if Try_a == 1:
     break
 
 
