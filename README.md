@@ -1,4 +1,4 @@
-# Code-Challenge--Hangman# Code Challenge – Hangman
+# Code Challenge – Hangman
 
 [https://github.com/ask-t/Code-Challenge--Hangman](https://github.com/ask-t/Code-Challenge--Hangman)
 
@@ -18,48 +18,13 @@ I worked on it on ver3.8.5
 
 Creating the Hangman game.
 
-Hangman game is a word guessing game. player can guess a letter in a trying until knowing the word or after 6 missings. At this time I ignore this after 6times. Instead of it,  I put a system showing how many times the player try to do.
-
-## Rules & Requirements
-1. Greet the user welcoming them to the game
-
-2. The program randomly selects a word from a list of 10 words with different lengths, you as the developer choose the words.
-
-3. The program indicates to the user how many letters are in the word
-
-4. The user is asked to guess a letter
-
-a. If the letter is in the word, the letter is displayed in the correct position of the word with all previously guessed correct letters
-
-b. If the letter is not in the word, display the letter indicating it is not in the word with all previously guessed letters that are not in the word
-
-5. The program displays how many guesses have been made, with how many correct and incorrect guesses.
-
-6. The program continues to ask the user for guesses until all the letters in the word are guessed correctly.
-
-7. When all letters of the word are guessed correctly,
-
-a. the program tells the user they have correctly guessed the word
-
-b. and indicates the number of guesses it took
-
-8. The program then asks the user if they would like to try again or quit
-
-a. If the user indicates they want to continue, the program chooses a different word randomly and the play continues
-
-b. If the user indicates they want to quit, the program thanks them for playing and quits.
-
-9. You can choose to use a terminal interface or a web interface
-
-Extra credit
-
-10. Draw a gallows and person being hanged drawing a new body part each time a guess is wrong
+Hangman game is a word guessing game. player can guess a letter in a trying until knowing the word or after 6 missings. 
 
 ## How to work it
 
 ### 1 prepare words for games.
 
-we need to prepare some words and put these on the list.
+we need to prepare the words and put these on the list.
 
 One thing we need to care about is that we need to choose the word which does not include duplicate letters. 
 
@@ -173,4 +138,107 @@ while True:
     if secrets == word_l:
       break
     count +=1
+```
+
+# Version2
+
+The previous program has some problems, and this code is long, so I tried to simplify it more.
+
+## step1 (remove the constraint of the word’s length)
+
+In the previous version, we can use only words whose length is between 3 to 6. By using for loop, I fixed to be able to deal with any words.
+
+### Previous
+
+```python
+secrets = ''
+word = 'apple'
+l = len(word)
+if l == 3:
+    secrets = '***'
+elif l == 4:
+  secrets = '****'
+elif l == 5:
+  secrets = '*****'
+elif l ==6:
+  secrets = '******'
+
+print(secrets)
+
+# *****
+```
+
+### After
+
+```python
+secrets = ''
+word = 'apple'
+l = len(word)
+for _ in range(l):
+  secrets += '*'
+
+print(secrets)
+	
+# *****
+
+```
+
+## Use list comprehension
+
+At this time, I will try to change letters with list, so it is better to use list comprehenshion.
+
+```python
+word = 'apple'
+length = len(word)
+print(length)
+l_a = [ '*' for i in range(length)]
+
+#5
+#['*', '*', '*', '*', '*']
+```
+
+## step2 ( remove constraint of index number)
+
+By using for loop, you do not have to write all index number.
+
+### Previous
+
+```python
+word_l = list('apple')
+secrets = ['*', '*', '*', '*', '*']
+answer = 'p'
+
+if answer == word_l[0]:
+  secrets[0] = word_l[0]
+if answer == word_l[1]:
+  secrets[1] = word_l[1]
+if answer == word_l[2]:
+  secrets[2] = word_l[2]
+if answer == word_l[3]:
+  secrets[3] = word_l[3]
+if answer == word_l[4]:
+  secrets[4] = word_l[4]
+
+print(secrets)
+
+# ['*', 'p', 'p', '*', '*']
+```
+
+### After
+
+```python
+word_l = list('apple')
+secrets = ['*', '*', '*', '*', '*']
+answer = 'p'
+
+num = 0
+
+for _ in range(len(word_l)):
+  if answer == word_l[num]:
+    secrets[num] = word_l[num]
+  num += 1
+
+print(secrets)
+
+# ['*', 'p', 'p', '*', '*']
 ```
