@@ -24,7 +24,7 @@ def main(word):
           num += 1
       else:
         print('it is not in the word.')
-      list_b.append(answer)
+        list_b.append(answer)
       b = len(list_b)
       print(f'Now you have used {list_a}\n incorrect answer:{b}')
     else: print('Please put a letter')
